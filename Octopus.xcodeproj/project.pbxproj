@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C2FCA0E2025F24700B36C6B /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2FCA0D2025F24700B36C6B /* Console.swift */; };
+		2C2FCA102025F2F800B36C6B /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2FCA0F2025F2F800B36C6B /* ConsoleView.swift */; };
 		2C3AEBAC201F5EEA00E13705 /* Octopus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3AEBA2201F5EEA00E13705 /* Octopus.framework */; };
 		2C3AEBB1201F5EEA00E13705 /* OctopusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3AEBB0201F5EEA00E13705 /* OctopusTests.swift */; };
 		2C3AEBB3201F5EEA00E13705 /* Octopus.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3AEBA5201F5EEA00E13705 /* Octopus.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +25,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2C2FCA0D2025F24700B36C6B /* Console.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
+		2C2FCA0F2025F2F800B36C6B /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
 		2C3AEBA2201F5EEA00E13705 /* Octopus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Octopus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3AEBA5201F5EEA00E13705 /* Octopus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Octopus.h; sourceTree = "<group>"; };
 		2C3AEBA6201F5EEA00E13705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				2C3AEBA5201F5EEA00E13705 /* Octopus.h */,
+				2C2FCA0D2025F24700B36C6B /* Console.swift */,
+				2C2FCA0F2025F2F800B36C6B /* ConsoleView.swift */,
 				2C3AEBA6201F5EEA00E13705 /* Info.plist */,
 			);
 			path = Octopus;
@@ -148,6 +154,7 @@
 				TargetAttributes = {
 					2C3AEBA1201F5EEA00E13705 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					2C3AEBAA201F5EEA00E13705 = {
@@ -196,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2FCA102025F2F800B36C6B /* ConsoleView.swift in Sources */,
+				2C2FCA0E2025F24700B36C6B /* Console.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +343,7 @@
 		2C3AEBB7201F5EEA00E13705 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -346,6 +356,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Sylar.Octopus;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +365,7 @@
 		2C3AEBB8201F5EEA00E13705 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -374,6 +386,7 @@
 		2C3AEBBA201F5EEA00E13705 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OctopusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,6 +400,7 @@
 		2C3AEBBB201F5EEA00E13705 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OctopusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
