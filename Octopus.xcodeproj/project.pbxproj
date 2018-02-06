@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2C2FCA0E2025F24700B36C6B /* Console.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2FCA0D2025F24700B36C6B /* Console.swift */; };
 		2C2FCA102025F2F800B36C6B /* ConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2FCA0F2025F2F800B36C6B /* ConsoleView.swift */; };
+		2C2FCA152025F6DB00B36C6B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2C2FCA142025F6DB00B36C6B /* README.md */; };
+		2C2FCA5A2025F88900B36C6B /* Octopus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2FCA592025F88900B36C6B /* Octopus.swift */; };
 		2C3AEBAC201F5EEA00E13705 /* Octopus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C3AEBA2201F5EEA00E13705 /* Octopus.framework */; };
 		2C3AEBB1201F5EEA00E13705 /* OctopusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3AEBB0201F5EEA00E13705 /* OctopusTests.swift */; };
 		2C3AEBB3201F5EEA00E13705 /* Octopus.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C3AEBA5201F5EEA00E13705 /* Octopus.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		2C2FCA0D2025F24700B36C6B /* Console.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Console.swift; sourceTree = "<group>"; };
 		2C2FCA0F2025F2F800B36C6B /* ConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleView.swift; sourceTree = "<group>"; };
+		2C2FCA142025F6DB00B36C6B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2C2FCA592025F88900B36C6B /* Octopus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Octopus.swift; sourceTree = "<group>"; };
 		2C3AEBA2201F5EEA00E13705 /* Octopus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Octopus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C3AEBA5201F5EEA00E13705 /* Octopus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Octopus.h; sourceTree = "<group>"; };
 		2C3AEBA6201F5EEA00E13705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,11 +58,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C2FCA122025F6C500B36C6B /* Deployment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Deployment;
+			sourceTree = "<group>";
+		};
+		2C2FCA132025F6D100B36C6B /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				2C2FCA142025F6DB00B36C6B /* README.md */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		2C2FCA582025F84300B36C6B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C3AEBA5201F5EEA00E13705 /* Octopus.h */,
+				2C3AEBA6201F5EEA00E13705 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		2C3AEB98201F5EEA00E13705 = {
 			isa = PBXGroup;
 			children = (
-				2C3AEBA4201F5EEA00E13705 /* Octopus */,
-				2C3AEBAF201F5EEA00E13705 /* OctopusTests */,
+				2C2FCA122025F6C500B36C6B /* Deployment */,
+				2C2FCA132025F6D100B36C6B /* Documentation */,
+				2C3AEBA4201F5EEA00E13705 /* Source */,
+				2C3AEBAF201F5EEA00E13705 /* Tests */,
 				2C3AEBA3201F5EEA00E13705 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,24 +102,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2C3AEBA4201F5EEA00E13705 /* Octopus */ = {
+		2C3AEBA4201F5EEA00E13705 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2C3AEBA5201F5EEA00E13705 /* Octopus.h */,
+				2C2FCA592025F88900B36C6B /* Octopus.swift */,
 				2C2FCA0D2025F24700B36C6B /* Console.swift */,
 				2C2FCA0F2025F2F800B36C6B /* ConsoleView.swift */,
-				2C3AEBA6201F5EEA00E13705 /* Info.plist */,
+				2C2FCA582025F84300B36C6B /* Supporting Files */,
 			);
-			path = Octopus;
+			path = Source;
 			sourceTree = "<group>";
 		};
-		2C3AEBAF201F5EEA00E13705 /* OctopusTests */ = {
+		2C3AEBAF201F5EEA00E13705 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				2C3AEBB0201F5EEA00E13705 /* OctopusTests.swift */,
 				2C3AEBB2201F5EEA00E13705 /* Info.plist */,
 			);
-			path = OctopusTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C2FCA152025F6DB00B36C6B /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +236,7 @@
 			files = (
 				2C2FCA102025F2F800B36C6B /* ConsoleView.swift in Sources */,
 				2C2FCA0E2025F24700B36C6B /* Console.swift in Sources */,
+				2C2FCA5A2025F88900B36C6B /* Octopus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +382,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Octopus/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sylar.Octopus;
@@ -372,7 +404,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Octopus/Info.plist;
+				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sylar.Octopus;

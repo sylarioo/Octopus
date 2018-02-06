@@ -12,9 +12,9 @@ class LoggerTagListView: UIView {
     var isActive = false
 }
 
-class LoggerConsole: UIViewController {
+class Console: UIViewController {
 
-    public static let shared = LoggerConsole()
+    public static let shared = Console()
 
     enum LogLevel: String {
         case severe, error, debug, warning, info, verbose, fatal
@@ -42,14 +42,6 @@ class LoggerConsole: UIViewController {
     private var selectedLevels: Set<LogLevel> = []
 
     private var displayItems: [LogItem] = []
-
-    public static func show() {
-        LoggerConsole.shared.showConsole()
-    }
-
-    public static func hide() {
-        LoggerConsole.shared.hideConsole()
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -267,28 +259,33 @@ class LoggerConsole: UIViewController {
         self.setConsoleText(logItems: self.logItems)
     }
 
-    fileprivate func showConsole() {
+    public func showConsole() {
         if !animating, self.view.superview == nil {
 
           self.setConsoleText(logItems: self.logItems)
           self.findAndResignFirstResponder(view: self.mainWindow())
 
-          LoggerConsole.shared.view.frame = self.offScreenFrame()
-          self.mainWindow().addSubview(LoggerConsole.shared.view)
+          Console.shared.view.frame = self.offScreenFrame()
+          self.mainWindow().addSubview(Console.shared.view)
+          
+          for view in self.mainWindow().subviews {
+            print("\(view.description)")
+          }
 
           animating = true
           UIView.beginAnimations(nil, context: nil)
           UIView.setAnimationDuration(0.25)
           UIView.setAnimationDelegate(self)
           UIView.setAnimationDidStop(#selector(consoleShown))
-          LoggerConsole.shared.view.frame = self.onScreenFrame()
-          LoggerConsole.shared.view.transform = self.viewTransForm()
+          Console.shared.view.frame = self.onScreenFrame()
+          Console.shared.view.transform = self.viewTransForm()
           UIView.commitAnimations()
         }
+      print("\(String(describing: self.view.superview?.description))")
     }
 
     @objc
-    fileprivate func hideConsole() {
+    public func hideConsole() {
         if !animating, self.view.superview != nil {
 
             self.findAndResignFirstResponder(view: self.mainWindow())
@@ -298,7 +295,7 @@ class LoggerConsole: UIViewController {
             UIView.setAnimationDuration(0.25)
             UIView.setAnimationDelegate(self)
             UIView.setAnimationDidStop(#selector(consoleHidden))
-            LoggerConsole.shared.view.frame = self.offScreenFrame()
+            Console.shared.view.frame = self.offScreenFrame()
             UIView.commitAnimations()
         }
     }
@@ -372,7 +369,7 @@ class LoggerConsole: UIViewController {
     @objc
     fileprivate func consoleHidden() {
         animating = false
-        LoggerConsole.shared.view.removeFromSuperview()
+        Console.shared.view.removeFromSuperview()
     }
 
     @objc
@@ -564,7 +561,7 @@ class LoggerConsole: UIViewController {
 
 // MARK: - UITextViewDelegate
 
-extension LoggerConsole: UITextFieldDelegate {
+extension Console: UITextFieldDelegate {
     public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let text = textField.text as NSString? {
             self.filterWords = text.replacingCharacters(in: range, with: string)
@@ -578,7 +575,7 @@ extension LoggerConsole: UITextFieldDelegate {
 
 // MARK: - UITableViewDelegate
 
-extension LoggerConsole: UITableViewDelegate {
+extension Console: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let item = displayItems[indexPath.row]
         return self.getTextHeight(text: item.logText, width: UIScreen.main.bounds.size.width - 10)
@@ -597,7 +594,7 @@ extension LoggerConsole: UITableViewDelegate {
 
 // MARK: - UITableViewDataSource
 
-extension LoggerConsole: UITableViewDataSource {
+extension Console: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return displayItems.count
     }
